@@ -1,0 +1,34 @@
+[package]
+name = "flat_bit_set"
+version = "0.1.0"
+edition = "2021"
+authors = ["ZengYL <zeng-y-l@qq.com>"]
+description = "有序、稀疏、节省空间的 bitset，适用于小数据量"
+license = "MIT OR Apache-2.0"
+keywords = ["container", "sparse", "bitset", "no_std"]
+categories = ["data-structures"]
+repository = "https://github.com/zeng-y-l/flat_bit_set"
+documentation = "https://docs.rs/flat_bit_set/"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"], optional = true }
+
+[dev-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+proptest = "1.5.0"
+rand = "0.8.5"
+proptest-state-machine = "0.3.0"
+imbl = { version = "3.0.0", features = ["proptest"] }
+criterion = "0.5.1"
+litemap = "0.7.3"
+roaring = "0.10.6"
+hi_sparse_bitset = "0.6.1"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[features]
+default = ["std"]
+std = []
